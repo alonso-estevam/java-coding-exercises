@@ -9,7 +9,7 @@ series corresponding to the given a, b, and n values as a single line of  space-
  From: https://www.hackerrank.com/challenges/java-loops/problem  */
 public class JavaLoopsII {
     public static void main(String[] args) {
-        Map<Integer, List<Integer>> map = new TreeMap<>();
+        Map<Integer, String> map = new TreeMap<>();
         Scanner sc = new Scanner(System.in);
 
         System.out.print("number of queries: ");
@@ -24,14 +24,14 @@ public class JavaLoopsII {
         }
 
         for (Integer i : map.keySet()) {
-            System.out.print(map.get(i));
+            System.out.println(map.get(i));
         }
 
         sc.close();
 
     }
-    private static List<Integer> mySolution(String[] parameters){
-        List<Integer> arr = new ArrayList<>();
+    private static String mySolution(String[] parameters){
+        StringBuilder sb = new StringBuilder();
         int a = Integer.parseInt(parameters[0]);
         int b = Integer.parseInt(parameters[1]);
         int n = Integer.parseInt(parameters[2]);
@@ -42,9 +42,10 @@ public class JavaLoopsII {
         for(int i = n; i >= 1; i--){
             int multiplication = (int) (Math.pow(2, (n-i)) * b);
             sum += multiplication;
-            arr.add(sum);
+            sb.append(sum + " ");
             index++;
         }
-        return arr;
+        int cut = sb.toString().lastIndexOf(" ");
+        return sb.toString().substring(0, cut);
     }
 }
