@@ -15,6 +15,7 @@ public class WhatIsInBetween {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(mySolution(1,4)));
 
+        System.out.println(Arrays.toString(littleImprovedSolution(1,4)));
     }
     private static int[] mySolution(int a, int b) {
         int size = (b - a) + 1;
@@ -24,6 +25,14 @@ public class WhatIsInBetween {
             a++;
         }
         return numbers;
+    }
+
+    public static int[] littleImprovedSolution(int a, int b) {
+        int[] result = new int[b - a + 1];
+        for (int i = a; i <= b; i++) {
+            result[i - a] = i;
+        }
+        return result;
     }
 
 }
