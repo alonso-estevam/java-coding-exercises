@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effceef6-d229-4463-962c-046fcc17d748" name="Changes" comment="first commit">
+    <list default="true" id="effceef6-d229-4463-962c-046fcc17d748" name="Changes" comment="little improvement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codewars/WhatIsInBetween.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codewars/WhatIsInBetween.java" afterDir="false" />
     </list>
@@ -22,6 +22,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bfeaa3fe-1c4c-41f7-8c19-7097765eb81b" />
+        <option name="url" value="https://github.com/alonso-estevam/java-coding-exercises" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="2V0AQPuel7awq5oTe9Payfz7lEa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -78,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693963306496</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="little improvement">
+      <created>1693963623172</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693963623172</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first solution" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="little improvement" />
+    <option name="LAST_COMMIT_MESSAGE" value="little improvement" />
   </component>
 </project>
