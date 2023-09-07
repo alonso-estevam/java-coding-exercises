@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effceef6-d229-4463-962c-046fcc17d748" name="Changes" comment="java loops - first approach">
+    <list default="true" id="effceef6-d229-4463-962c-046fcc17d748" name="Changes" comment="java loops - adjust output to match expected formatted results">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hackerrank/JavaLoopsII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hackerrank/JavaLoopsII.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +47,20 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.JavaLoopsII">
+  <component name="RunManager" selected="Application.FindFirstNonConsecutiveNumber">
+    <configuration name="FindFirstNonConsecutiveNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="codewars.FindFirstNonConsecutiveNumber" />
+      <module name="java-coding-exercises" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="codewars.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JavaLoopsII" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hackerrank.JavaLoopsII" />
       <module name="java-coding-exercises" />
@@ -77,6 +89,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FindFirstNonConsecutiveNumber" />
         <item itemvalue="Application.JavaLoopsII" />
         <item itemvalue="Application.WhatIsInBetween" />
       </list>
@@ -126,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694038108880</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="java loops - adjust output to match expected formatted results">
+      <created>1694039363678</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694039363678</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +166,7 @@
     <MESSAGE value="little improvement" />
     <MESSAGE value="clever solution" />
     <MESSAGE value="java loops - first approach" />
-    <option name="LAST_COMMIT_MESSAGE" value="java loops - first approach" />
+    <MESSAGE value="java loops - adjust output to match expected formatted results" />
+    <option name="LAST_COMMIT_MESSAGE" value="java loops - adjust output to match expected formatted results" />
   </component>
 </project>
