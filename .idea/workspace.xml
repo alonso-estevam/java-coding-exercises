@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effceef6-d229-4463-962c-046fcc17d748" name="Changes" comment="lamba expressions and method references challenge">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="effceef6-d229-4463-962c-046fcc17d748" name="Changes" comment="solution with lamba expressions">
       <change beforePath="$PROJECT_DIR$/src/externalchallenges/LambdaExpressionsAndMethodReferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/externalchallenges/LambdaExpressionsAndMethodReferences.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694175518166</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="solution with lamba expressions">
+      <created>1694177541045</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694177541045</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +204,7 @@
     <MESSAGE value="java loops - adjust output to match expected formatted results" />
     <MESSAGE value="find non consecutive number - first approach" />
     <MESSAGE value="lamba expressions and method references challenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="lamba expressions and method references challenge" />
+    <MESSAGE value="solution with lamba expressions" />
+    <option name="LAST_COMMIT_MESSAGE" value="solution with lamba expressions" />
   </component>
 </project>

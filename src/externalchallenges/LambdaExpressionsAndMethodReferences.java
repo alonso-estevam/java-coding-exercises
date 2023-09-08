@@ -15,13 +15,13 @@ public class LambdaExpressionsAndMethodReferences {
         employees.add(new Employee("Sebastiana", new BigDecimal("7000"), false));
 
         // TODO remove inactive employees
-        employees.removeIf(e -> e.isInactive());
+        employees.removeIf(Employee::isInactive);
 
         // TODO sort employees by salary
         employees.sort((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()));
 
         // TODO iterate and print employees using static print method
-        employees.forEach(e -> print(e));
+        employees.forEach(LambdaExpressionsAndMethodReferences::print);
 
     }
     private static void print(Employee employee) {
