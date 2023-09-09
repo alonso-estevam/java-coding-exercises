@@ -1,5 +1,6 @@
 package hackerrank;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -14,7 +15,9 @@ public class JavaAnagrams {
         String str1 = sc.next();
         String str2 = sc.next();
 
-        String output = mySolution(str1, str2);
+        String output = cleverSolution(str1, str2);
+
+        //mySolution(str1, str2);
 
         System.out.println(output);
 
@@ -48,5 +51,20 @@ public class JavaAnagrams {
         for (int i = 0; i < str.length(); i++) {
             strMap.put(str.charAt(i), countFrequencyLetter(str, str.charAt(i)));
         }
+    }
+
+    private static String cleverSolution(String str1, String str2){
+        char[] charArray1 = str1.toLowerCase().toCharArray();
+        char[] charArray2 = str2.toLowerCase().toCharArray();
+
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+
+        if (Arrays.equals(charArray1, charArray2)){
+            return "Anagrams";
+        } else {
+            return "Not Anagrams";
+        }
+
     }
 }
