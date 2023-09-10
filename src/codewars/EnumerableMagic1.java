@@ -1,8 +1,11 @@
 package codewars;
 
+import java.util.Arrays;
 import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
 
-/*
+
+/*    From: https://www.codewars.com/kata/54598d1fcbae2ae05200112c/java
 Create a method all which takes two params:
     a sequence
     a function (function pointer in C)
@@ -27,5 +30,9 @@ public class EnumerableMagic1 {
             }
         }
         return true;
+    }
+
+    private static boolean cleverSolution(int[] list, IntPredicate predicate){
+        return IntStream.of(list).allMatch(predicate);
     }
 }
