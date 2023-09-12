@@ -1,5 +1,6 @@
 package externalchallenges.nelioalves.streams;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -12,31 +13,51 @@ import java.util.List;
 public class StreamsChallenge {
     public static void main(String[] args) {
 
-        List<Product> products = new ArrayList<>();
-        products.add(new Product("Tv", 900.00));
-        products.add(new Product("Mouse", 50.00));
-        products.add(new Product("Tablet", 350.50));
-        products.add(new Product("HD Case", 80.90));
-        products.add(new Product("Computer", 850.00));
-        products.add(new Product("Monitor", 290.00));
+        String filePath = "C://temp//input.csv"; // I couldn't get the relative path :(
+
+        List<Product> products = getProductList(filePath);
 
         double averagePrice = getAveragePrice(products);
         System.out.printf("The average price is $%.2f%n------%n", averagePrice);
 
-        // filter the products with price lower than average price
-        // sort the names of the products by descending order ( using .reversed() )
-        // print the names using forEach()
-        products.stream()
-                .filter(p -> p.getPrice() < averagePrice)
-                .sorted(Comparator.comparing(Product::getName).reversed())
-                .forEach(p -> System.out.println(p.getName()));
+        printProductsNameByDescendingOrder(products, averagePrice);
+
     }
 
     // average price: reduce to get the sum of the prices and then divide by size of the list
     private static double getAveragePrice(List<Product> products){
         double sum = products.stream()
                 .map(Product::getPrice)
-                .reduce(0.0, (n1, n2) -> n1 + n2);
+                .reduce(0.0, Double::sum);
         return sum / products.size();
+    }
+
+    /*  filter the products with price lower than average price
+        sort the names of the products by descending order ( using .reversed() )
+        print the names using forEach()  */
+    private static void printProductsNameByDescendingOrder(List<Product> products, double averagePrice){
+        products.stream()
+                .filter(p -> p.getPrice() < averagePrice)
+                .sorted(Comparator.comparing(Product::getName).reversed())
+                .forEach(p -> System.out.println(p.getName()));
+    }
+
+    private static List<Product> getProductList(String filePath) {
+        List<Product> products = new ArrayList<>();
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            String currentLine = reader.readLine();
+            while(currentLine != null){
+                String[] fields = currentLine.split(",");
+                products.add(new Product(fields[0], Double.parseDouble(fields[1])));
+                currentLine = reader.readLine();
+            }
+            reader.close();
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return products;
+
     }
 }
