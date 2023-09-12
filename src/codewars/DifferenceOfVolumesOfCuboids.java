@@ -1,5 +1,7 @@
 package codewars;
 
+import java.util.stream.IntStream;
+
 /*  From: https://www.codewars.com/kata/58cb43f4256836ed95000f97/train/java
     In this simple exercise, you will create a program that will take two lists of integers,
     a and b. Each list will consist of 3 positive integers above 0, representing the dimensions
@@ -11,11 +13,15 @@ package codewars;
 */
 public class DifferenceOfVolumesOfCuboids {
     public static void main(String[] args) {
+        int result = findDifference(new int[]{9, 7, 2}, new int[]{5, 2, 2});
+        System.out.println(result);
 
     }
 
     public static int findDifference(final int[] firstCuboid, final int[] secondCuboid) {
-        //your code here !!
-        return 2021;
+        int volume1 = IntStream.of(firstCuboid).reduce(1, (n1, n2) -> n1 * n2);
+        int volume2 = IntStream.of(secondCuboid).reduce(1, (n1, n2) -> n1 * n2);
+
+        return Math.abs(volume1 - volume2);
     }
 }
