@@ -41,13 +41,54 @@ public class JavaDatatypes {
         List<BigDecimal> inputs = new ArrayList<>();
 
         for (int i = 0; i < numberOfInputs; i++) {
-            inputs.add(new BigDecimal(sc.nextInt()));
+            inputs.add(new BigDecimal(sc.next()));
         }
 
-        inputs.forEach(System.out::println);
+        inputs.forEach(input -> System.out.println(solution(input)));
 
         sc.close();
 
+    }
+
+    private static String solution(BigDecimal integer){
+        if (fitByte(integer)){
+            return integer + " can be fitted in:\n" +
+                    "* byte\n" +
+                    "* short\n" +
+                    "* int\n" +
+                    "* long";
+        }
+        if(fitShort(integer)){
+            return integer + " can be fitted in:\n" +
+                    "* short\n" +
+                    "* int\n" +
+                    "* long";
+        }
+        if (fitInt(integer)){
+            return integer + " can be fitted in:\n" +
+                    "* int\n" +
+                    "* long";
+        } if (fitLong(integer)){
+            return integer + " can be fitted in:\n" +
+                    "* long";
+        }
+        return integer + " can't be fitted anywhere.";
+    }
+    private static boolean fitLong(BigDecimal integer){
+        return integer.compareTo(BigDecimal.valueOf(Long.MAX_VALUE)) <= 0
+                && (integer.compareTo(BigDecimal.valueOf(Long.MIN_VALUE)) > 0);
+    }
+    private static boolean fitInt(BigDecimal integer){
+        return integer.compareTo(BigDecimal.valueOf(Integer.MAX_VALUE)) <= 0
+                && (integer.compareTo(BigDecimal.valueOf(Integer.MIN_VALUE)) > 0);
+    }
+    private static boolean fitShort(BigDecimal integer){
+        return integer.compareTo(BigDecimal.valueOf(Short.MAX_VALUE)) <= 0
+                && (integer.compareTo(BigDecimal.valueOf(Short.MIN_VALUE)) > 0);
+    }
+    private static boolean fitByte(BigDecimal integer){
+        return (integer.compareTo(BigDecimal.valueOf(Byte.MAX_VALUE)) <= 0)
+                && (integer.compareTo(BigDecimal.valueOf(Byte.MIN_VALUE)) > 0);
     }
 
 }
