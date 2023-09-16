@@ -16,16 +16,16 @@ public class JavaStringReverse {
         Scanner sc = new Scanner(System.in);
 
         String word = sc.nextLine();
-        System.out.println(solution(word));
+        System.out.println(isPalindrome(word) ? "Yes" : "No");
 
         sc.close();
 
     }
-    private static String solution (String word){
+    private static boolean isPalindrome (String word){
         StringBuilder reversed = new StringBuilder();
         for (int i = (word.length() - 1); i >= 0; i--) {
             reversed.append(word.charAt(i));
         }
-        return word.contentEquals(reversed) ? "Yes" : "No";
+        return word.equalsIgnoreCase(reversed.toString());
     }
 }
