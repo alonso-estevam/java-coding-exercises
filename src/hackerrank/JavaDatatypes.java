@@ -1,5 +1,10 @@
 package hackerrank;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /* From: https://www.hackerrank.com/challenges/java-datatypes/problem
   Java has 8 primitive data types; char, boolean, byte, short, int, long, float, and double.
   For this exercise, we'll work with the primitives used to hold integer values
@@ -31,5 +36,18 @@ If the number cannot be stored in one of the four aforementioned primitives, pri
 */
 public class JavaDatatypes {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numberOfInputs = sc.nextInt();
+        List<BigDecimal> inputs = new ArrayList<>();
+
+        for (int i = 0; i < numberOfInputs; i++) {
+            inputs.add(new BigDecimal(sc.nextInt()));
+        }
+
+        inputs.forEach(System.out::println);
+
+        sc.close();
+
     }
+
 }
