@@ -1,8 +1,5 @@
 package hackerrank;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /* From: https://www.hackerrank.com/challenges/java-datatypes/problem
@@ -38,57 +35,31 @@ public class JavaDatatypes {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numberOfInputs = sc.nextInt();
-        List<BigDecimal> inputs = new ArrayList<>();
 
         for (int i = 0; i < numberOfInputs; i++) {
-            inputs.add(new BigDecimal(sc.next()));
+            try {
+                long x = sc.nextLong();
+                System.out.println(x + " can be fitted in:");
+                if(x >= Byte.MIN_VALUE && x <= Byte.MAX_VALUE){
+                    System.out.println("* byte");
+                }
+                if(x >= Short.MIN_VALUE && x <= Short.MAX_VALUE){
+                    System.out.println("* short");
+                }
+                if(x >= Integer.MIN_VALUE && x <= Integer.MAX_VALUE){
+                    System.out.println("* int");
+                }
+                if(x >= Long.MIN_VALUE && x <= Long.MAX_VALUE){
+                    System.out.println("* long");
+                }
+            } catch(Exception e){
+                System.out.println(sc.next() + " can't be fitted anywhere.");
+            }
         }
 
-        inputs.forEach(input -> System.out.println(solution(input)));
 
         sc.close();
 
-    }
-
-    private static String solution(BigDecimal integer){
-        if (fitByte(integer)){
-            return integer + " can be fitted in:\n" +
-                    "* byte\n" +
-                    "* short\n" +
-                    "* int\n" +
-                    "* long";
-        }
-        if(fitShort(integer)){
-            return integer + " can be fitted in:\n" +
-                    "* short\n" +
-                    "* int\n" +
-                    "* long";
-        }
-        if (fitInt(integer)){
-            return integer + " can be fitted in:\n" +
-                    "* int\n" +
-                    "* long";
-        } if (fitLong(integer)){
-            return integer + " can be fitted in:\n" +
-                    "* long";
-        }
-        return integer + " can't be fitted anywhere.";
-    }
-    private static boolean fitLong(BigDecimal integer){
-        return integer.compareTo(BigDecimal.valueOf(Long.MAX_VALUE)) <= 0
-                && (integer.compareTo(BigDecimal.valueOf(Long.MIN_VALUE)) > 0);
-    }
-    private static boolean fitInt(BigDecimal integer){
-        return integer.compareTo(BigDecimal.valueOf(Integer.MAX_VALUE)) <= 0
-                && (integer.compareTo(BigDecimal.valueOf(Integer.MIN_VALUE)) > 0);
-    }
-    private static boolean fitShort(BigDecimal integer){
-        return integer.compareTo(BigDecimal.valueOf(Short.MAX_VALUE)) <= 0
-                && (integer.compareTo(BigDecimal.valueOf(Short.MIN_VALUE)) > 0);
-    }
-    private static boolean fitByte(BigDecimal integer){
-        return (integer.compareTo(BigDecimal.valueOf(Byte.MAX_VALUE)) <= 0)
-                && (integer.compareTo(BigDecimal.valueOf(Byte.MIN_VALUE)) > 0);
     }
 
 }
