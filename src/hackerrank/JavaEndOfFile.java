@@ -21,18 +21,11 @@ public class JavaEndOfFile {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int i = 1;
-        StringBuilder sb = new StringBuilder();
 
-        while(sc.hasNext() ){
-            sb.append(i).append(" ").append(sc.nextLine()).append(System.lineSeparator());
+        while(sc.hasNext()){
+            System.out.println(i + " " + sc.nextLine());
             i++;
-
-            if(sc.nextLine().isEmpty()){
-                break;
-            }
         }
-
-        System.out.println(sb);
 
         sc.close();
     }
