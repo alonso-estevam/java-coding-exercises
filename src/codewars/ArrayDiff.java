@@ -10,7 +10,8 @@ package codewars;
     If a value is present in b, all of its occurrences must be removed from the other:
 
     Kata.arrayDiff(new int[] {1, 2, 2, 2, 3}, new int[] {2}) => new int[] {1, 3} */
-import java.util.*;
+
+import java.util.stream.IntStream;
 
 public class ArrayDiff {
     public static void main(String[] args) {
@@ -21,24 +22,9 @@ public class ArrayDiff {
 
     }
     public static int[] arrayDiff(int[] a, int[] b){
-        List<Integer> arrayA = arrayToList(a);
-        List<Integer> arrayB = arrayToList(b);
-        arrayA.removeAll(arrayB);
-        return listToArray(arrayA);
+        return IntStream.of(a)
+                .filter(x -> IntStream.of(b).noneMatch(y -> y == x))
+                .toArray();
     }
 
-    private static List<Integer> arrayToList(int[] arr){
-        List<Integer> list = new ArrayList<>();
-        for (int i : arr) {
-            list.add(i);
-        }
-        return list;
-    }
-    private static int[] listToArray(List<Integer> list){
-        int[] arr = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            arr[i] = list.get(i);
-        }
-        return arr;
-    }
 }
