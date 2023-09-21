@@ -1,5 +1,7 @@
 package exercism;
 
+import java.util.Optional;
+
 // From: https://exercism.org/tracks/java/exercises/two-fer
 public class _003_TwoFer {
     public static void main(String[] args) {
@@ -15,10 +17,8 @@ public class _003_TwoFer {
 
     public class Twofer {
         public static String twofer(String name) {
-            if(name == null || name.isEmpty()){
-                name = "you";
-            }
-            return String.format("One for %s, one for me.", name);
+            return String.format("One for %s, one for me.",
+                    Optional.ofNullable(name).orElse("you"));
         }
     }
 }
