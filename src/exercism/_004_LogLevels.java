@@ -1,7 +1,7 @@
 package exercism;
 
 // From: https://exercism.org/tracks/java/exercises/log-levels
-public class _002_LogLevels {
+public class _004_LogLevels {
     public static void main(String[] args) {
         String msg = "[ERROR]:   Illegal argument  ";
 
