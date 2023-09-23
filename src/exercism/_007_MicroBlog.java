@@ -1,5 +1,7 @@
 package exercism;
 
+// From: https://exercism.org/tracks/java/exercises/micro-blog
+
 public class _007_MicroBlog {
     public static void main(String[] args) {
         String input = "abc😀😀efgh";
@@ -7,9 +9,10 @@ public class _007_MicroBlog {
         System.out.println(truncate(input));
     }
     public static String truncate(String input) {
-        if(input.length() > 5){
-            return input.substring(0,5);
-        }
-        return input;
+        return input.codePoints()
+                .limit(5)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint,
+                StringBuilder::append)
+                .toString();
     }
 }
