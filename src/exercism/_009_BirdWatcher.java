@@ -1,6 +1,6 @@
 package exercism;
 
-import static java.util.stream.IntStream.of;
+import java.util.Arrays;
 
 // From: https://exercism.org/tracks/java/exercises/bird-watcher/edit
 public class _009_BirdWatcher {
@@ -24,35 +24,31 @@ public class _009_BirdWatcher {
     }
     public static class BirdWatcher {
         private final int[] birdsPerDay;
-
+        private final int lastIndex;
         public BirdWatcher(int[] birdsPerDay) {
             this.birdsPerDay = birdsPerDay.clone();
+            this.lastIndex = birdsPerDay.length - 1;
         }
-
         public int[] getLastWeek() {
-            return this.birdsPerDay;
+            return birdsPerDay;
         }
-
         public int getToday() {
-            return this.birdsPerDay[6];
+            return (lastIndex > -1)? birdsPerDay[lastIndex]: 0;
         }
-
         public void incrementTodaysCount() {
-            this.birdsPerDay[6] += 1;
+            birdsPerDay[lastIndex] = getToday() + 1;
         }
-
         public boolean hasDayWithoutBirds() {
-            return  of(this.birdsPerDay).anyMatch(b -> b == 0);
+            return Arrays.stream(birdsPerDay).anyMatch(day -> day == 0);
         }
-
         public int getCountForFirstDays(int numberOfDays) {
-            return of(this.birdsPerDay).limit(numberOfDays).sum();
+            return Arrays.stream(birdsPerDay, 0,
+                    Math.min(birdsPerDay.length, numberOfDays))
+                    .sum();
         }
-
         public int getBusyDays() {
-            return (int) of(this.birdsPerDay)
-                    .filter(b -> b >= 5)
-                    .count();
+            return Arrays.stream(birdsPerDay)
+                    .reduce(0, (count, day) -> count += (day > 4)? 1 : 0);
         }
     }
 }
