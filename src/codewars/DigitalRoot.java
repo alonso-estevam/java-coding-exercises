@@ -8,18 +8,10 @@ public class DigitalRoot {
 
     }
     public static int recursiveSum(int number){
-        final String numbers = String.valueOf(number);
-        final int digits = numbers.length();
-        int sum = Character.getNumericValue(numbers.charAt(0));
-        for(int i = 1; i < digits; i++) {
-            sum += Character.getNumericValue(numbers.charAt(i));
+        if (number < 10) {
+            return number;
         }
-
-        if(sum > 9) {
-            return recursiveSum(sum);
-        } else {
-            return sum;
-        }
+        return recursiveSum(number % 10 + recursiveSum(number / 10));
     }
 
 }
