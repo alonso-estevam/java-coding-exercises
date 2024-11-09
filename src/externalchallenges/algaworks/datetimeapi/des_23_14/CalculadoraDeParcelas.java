@@ -2,6 +2,8 @@ package externalchallenges.algaworks.datetimeapi.des_23_14;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -46,4 +48,24 @@ public class CalculadoraDeParcelas {
         }
     }
 
+    // Alternativa (e solução da Algaworks):
+    // Método que retorna uma List<LocalDate> representando as datas das parcelas
+    private static List<LocalDate> calcular(LocalDate dataPrimeiraParcela, int quantidadeParcelas) {
+        List<LocalDate> datasParcelas = new ArrayList<>();
+
+        for (int numeroParcela = 1; numeroParcela <= quantidadeParcelas; numeroParcela++) {
+            LocalDate dataProximaParcela = dataPrimeiraParcela.plusMonths(numeroParcela - 1);
+            datasParcelas.add(dataProximaParcela);
+        }
+
+        return datasParcelas;
+    }
+
+    // Método específico para imprimir as parcelas
+    private static void imprimirParcelas(List<LocalDate> datasParcelas) {
+        for (int i = 0; i < datasParcelas.size(); i++) {
+            System.out.printf("Parcela #%d - %s%n", i+1,
+                    datasParcelas.get(i).format(FORMATADOR_DATA));
+        }
+    }
 }
