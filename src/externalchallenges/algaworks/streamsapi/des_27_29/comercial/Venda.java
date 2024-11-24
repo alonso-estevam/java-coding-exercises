@@ -71,11 +71,17 @@ public class Venda {
 
     // TODO: Refatorar usando streams
     private void calcularValorTotal() {
-        BigDecimal valorTotal = BigDecimal.ZERO;
-        for (Item item : itens) {
-            valorTotal = valorTotal.add(item.calcularValorTotal());
-        }
-        this.valorTotal = valorTotal;
+//        BigDecimal valorTotal = BigDecimal.ZERO;
+//        for (Item item : itens) {
+//            valorTotal = valorTotal.add(item.calcularValorTotal());
+//        }
+//        this.valorTotal = valorTotal;
+
+        this.valorTotal = itens.stream()
+                .reduce(BigDecimal.ZERO, (subtotal, item) -> {
+                    BigDecimal valorTotalItem = item.calcularValorTotal();
+                    return subtotal.add(valorTotalItem);
+                }, BigDecimal::add);
     }
 
     public enum Status {

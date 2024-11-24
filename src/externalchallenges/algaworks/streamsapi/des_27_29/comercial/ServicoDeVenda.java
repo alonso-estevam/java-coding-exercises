@@ -3,6 +3,7 @@ package externalchallenges.algaworks.streamsapi.des_27_29.comercial;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ServicoDeVenda {
@@ -45,13 +46,17 @@ public class ServicoDeVenda {
 
     // TODO: refatorar usando streams
     private Integer gerarProximoCodigo() {
-        int maiorCodigo = 0;
-        for (Venda venda : vendas) {
-            if (venda.getCodigo() > maiorCodigo) {
-                maiorCodigo = venda.getCodigo();
-            }
-        }
-        return maiorCodigo + 1;
+//        int maiorCodigo = 0;
+//        for (Venda venda : vendas) {
+//            if (venda.getCodigo() > maiorCodigo) {
+//                maiorCodigo = venda.getCodigo();
+//            }
+//        }
+//        return maiorCodigo + 1;
+        return vendas.stream()
+                .mapToInt(Venda::getCodigo)
+                .max()
+                .orElseThrow();
     }
 
     public List<Venda> obterTodas() {
