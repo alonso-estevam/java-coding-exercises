@@ -56,7 +56,7 @@ public class ServicoDeVenda {
         return vendas.stream()
                 .mapToInt(Venda::getCodigo)
                 .max()
-                .orElseThrow();
+                .orElse(0);
     }
 
     public List<Venda> obterTodas() {
