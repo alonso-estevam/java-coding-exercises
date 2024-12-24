@@ -21,8 +21,8 @@ public class AgendamentoEventoSolucaoAlgaworks {
     private static final DateTimeFormatter FORMATADOR_HORARIO = DateTimeFormatter.ofPattern("HH:mm");
     private static final DateTimeFormatter FORMATADOR_COMPLETO_BRASIL = DateTimeFormatter
             .ofLocalizedDateTime(FormatStyle.FULL, FormatStyle.SHORT)
-            .withLocale(Locale.of("pt", "BR"));
-//            .withLocale(Locale.FRENCH); // uma alternativa é passar um Locale pré-definido
+//            .withLocale(Locale.of("pt", "BR"));
+            .withLocale(Locale.FRENCH); // uma alternativa é passar um Locale pré-definido
 
     public static void main(String[] args) {
 
